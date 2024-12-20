@@ -5,7 +5,7 @@ import Navbar from './components/navbar/Navbar';
 import Devolver from './components/devolver/Devolver';
 import Guia from './components/guias/Guia';
 import { MyProvider } from './context/Context';
-import Login from './components/login/login';
+import { Login } from './components/login/login';
 
 
 
@@ -14,7 +14,7 @@ function App() {
     <MyProvider>
       <Navbar />
       <Routes>
-      <Route path="/" element={<Login/>} />
+      <Route path="/" element={<Login />} />
       <Route path="/ingreso" element={<Ingreso />} />
       <Route path="/guias" element={<Guia />} />
         

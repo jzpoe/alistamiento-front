@@ -1,6 +1,6 @@
 import  './login.css'
 
-const Login = () => {
+export const Login = () => {
   return (
     <form className='container-formulario' >
         <label className='container-label' htmlFor="">Nombre </label>
@@ -19,4 +19,3 @@ const Login = () => {
   )
 }
 
-export default Login
