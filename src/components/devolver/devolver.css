@@ -1,0 +1,22 @@
+.container-devolver {
+  display: flex;
+  justify-content: center;
+  justify-content: space-between;
+  background-color: red;
+  flex-direction: column;
+  border: 3px solid #333; /* Borde visible */
+  border-radius: 10px; /* Bordes redondeados */
+padding: 40px;
+  width: 80%; /* Define el ancho del contenedor */
+  margin: 0 auto; /* Centra el contenedor y deja espacio a los lados */
+  height: 70vh; /* Ocupa el 90% del alto de la pantalla */
+  margin-top: 80px;
+  color: #fff; /* Color del texto */
+  font-size: 1rem; /* Tamaño del texto */
+  box-sizing: border-box; /* Evita que el borde afecte el tamaño total */
+}
+
+.container-h1{
+    display: flex;
+    justify-content: center;
+}

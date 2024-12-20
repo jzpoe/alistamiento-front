@@ -1,0 +1,111 @@
+/* Contenedor principal */
+.parent {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Dos columnas iguales */
+    grid-gap: 20px;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+  
+  /* Formulario */
+  .container-formulario {
+    display: flex;
+    flex-direction: column;
+    gap: 16px; /* Espaciado entre los elementos */
+    max-width: 400px; /* Ancho máximo del formulario */
+    margin: 0 auto; /* Centramos en pantallas pequeñas */
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .container-label {
+    font-weight: bold;
+    margin-bottom: 4px;
+    color: #333;
+  }
+  
+  .container-input {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+  }
+  
+  .container-input:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  }
+  
+  .boton-login {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .boton-login:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Contenedor de la foto */
+  .container-foto {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    width: 100%;
+    height: 300px;
+    border-radius: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
+    text-align: center;
+    color: #555;
+    font-size: 16px;
+  }
+  
+  /* Diseño responsivo */
+  @media (max-width: 768px) {
+    .parent {
+      grid-template-columns: 1fr; /* Una sola columna */
+      gap: 40px;
+    }
+  
+    .container-formulario,
+    .container-foto {
+      max-width: 100%; /* Ocupan todo el ancho disponible */
+    }
+  
+    .container-foto {
+      height: 250px; /* Ajusta la altura para pantallas más pequeñas */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .container-formulario {
+      padding: 10px;
+    }
+  
+    .container-input {
+      font-size: 12px;
+      padding: 8px;
+    }
+  
+    .boton-login {
+      font-size: 14px;
+      padding: 8px;
+    }
+  
+    .container-foto {
+      font-size: 14px;
+      height: 200px;
+    }
+  }
