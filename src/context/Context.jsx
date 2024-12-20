@@ -11,7 +11,7 @@ export const MyProvider = ({ children }) => {
   useEffect(() => {
     const fetchDatos = async () => {
       try {
-        const response = await fetch('https://alistamiento-guias.vercel.app//api/datos');
+        const response = await fetch('https://alistamiento-guias.vercel.app/api/datos');
         const data = await response.json();
         setDatos(data); // Guardar datos en el estado global
       } catch (error) {
