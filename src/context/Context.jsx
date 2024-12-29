@@ -1,4 +1,4 @@
-import React, { createContext, useEffect, useState } from 'react';
+import React, { createContext, useContext, useEffect, useState } from 'react';
 
 // Crear el contexto
 export const MyContext = createContext();
@@ -6,12 +6,14 @@ export const MyContext = createContext();
 // Crear el proveedor del contexto
 export const MyProvider = ({ children }) => {
     const [datos, setDatos] = useState({});
+    
 
     // Función para obtener datos desde el backend
   useEffect(() => {
     const fetchDatos = async () => {
       try {
-        const response = await fetch('https://alistamiento-backend.vercel.app/api/datos');
+        //const response = await fetch('https://alistamiento-backend.vercel.app/api/datos');
+        const response = await fetch('http://localhost:3001/api/datos');
                                       
         const data = await response.json();
         setDatos(data); // Guardar datos en el estado global
@@ -29,3 +31,4 @@ export const MyProvider = ({ children }) => {
         </MyContext.Provider>
     );
 };
+

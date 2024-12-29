@@ -70,6 +70,11 @@
   .boton-login:active {
     transform: scale(0.98); /* Pequeño efecto de presión */
   }
+
+  .visible {
+    display: flex;
+    flex-direction: column;
+  }
   
   /* Responsive para pantallas pequeñas */
   @media (max-width: 768px) {
