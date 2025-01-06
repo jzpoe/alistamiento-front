@@ -1,15 +1,56 @@
-import { useContext, useState } from 'react';
-import './ingreso.css';
-import { MyContext } from '../../context/Context';
+import { useContext, useState } from "react";
+import "./ingreso.css";
+import { MyContext } from "../../context/Context";
+import Swal from "sweetalert2";
 
 const Ingreso = () => {
+  const {
+    HandleEnviar,
+    nombre,
+    setNombre,
+    guia,
+    setGuia,
+    valor,
+    setValor,
+    fecha,
+    setFecha,
+    error,
+  } = useContext(MyContext); // Importar el hook personalizado
+
+  const handleEnviado = async (e) => {
+    e.preventDefault(); // Prevenir el comportamiento por defecto del formulario
+
+    try {
+      // Aquí se llama al manejador HandleEnviar
+      await HandleEnviar();
+
+      // Después de enviar correctamente, muestra el mensaje de éxito
+      Swal.fire({
+        title: "¡Hecho!",
+        text: "¡Se ha enviado correctamente!",
+        icon: "success",
+        confirmButtonText: "Aceptar",
+      });
+
+    } catch (error) {
+      // Si ocurre un error al enviar
+      Swal.fire({
+        title: "Error",
+        text: "Hubo un error al enviar la información.",
+        icon: "error",
+        confirmButtonText: "Intentar nuevamente",
+      });
+    }
+  };
+
   
-  const { HandleEnviar, nombre, setNombre, guia, setGuia, valor, setValor, fecha, setFecha, error } = useContext(MyContext); // Importar el hook personalizado
 
   return (
     <div className="parent">
-      <form onSubmit={HandleEnviar} className="container-formulario">
-        <label className="container-label" htmlFor="nombre">Nombre</label>
+      <form onSubmit={handleEnviado} className="container-formulario">
+        <label className="container-label" htmlFor="nombre">
+          Nombre
+        </label>
         <input
           className="container-input"
           id="nombre"
@@ -19,7 +60,9 @@ const Ingreso = () => {
           onChange={(e) => setNombre(e.target.value)}
         />
 
-        <label className="container-label" htmlFor="guia">Guía</label>
+        <label className="container-label" htmlFor="guia">
+          Guía
+        </label>
         <input
           className="container-input"
           id="guia"
@@ -29,7 +72,9 @@ const Ingreso = () => {
           onChange={(e) => setGuia(e.target.value)}
         />
 
-        <label className="container-label" htmlFor="valor">Valor</label>
+        <label className="container-label" htmlFor="valor">
+          Valor
+        </label>
         <input
           className="container-input"
           id="valor"
@@ -39,7 +84,9 @@ const Ingreso = () => {
           onChange={(e) => setValor(e.target.value)}
         />
 
-        <label className="container-label" htmlFor="fecha">Fecha</label>
+        <label className="container-label" htmlFor="fecha">
+          Fecha
+        </label>
         <input
           className="container-input"
           id="fecha"
@@ -49,14 +96,17 @@ const Ingreso = () => {
           onChange={(e) => setFecha(e.target.value)}
         />
 
-        <label className="container-label" htmlFor="foto">Foto</label>
+        <label className="container-label" htmlFor="foto">
+          Foto
+        </label>
         <input className="container-input" id="foto" type="file" />
 
-        <button className="boton-login" type="submit">Ingresar</button>
+        <button className="boton-login" type="submit">
+          Ingresar
+        </button>
       </form>
-
-      {error && <p className="error-message">{error}</p>} {/* Mostrar mensaje de error si existe */}
-
+      {error && <p className="error-message">{error}</p>}{" "}
+      {/* Mostrar mensaje de error si existe */}
       <div className="container-foto">Foto</div>
     </div>
   );

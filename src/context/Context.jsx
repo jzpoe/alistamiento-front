@@ -1,4 +1,5 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
+import { MyContext_Hecho } from './Context_Hecho';
 
 // Crear el contexto
 export const MyContext = createContext();
@@ -14,23 +15,28 @@ export const MyProvider = ({ children }) => {
 
   // Función para obtener datos desde el backend
   const fetchDatos = async () => {
+    
     try {
-      const response = await fetch('https://alistamiento-backend.vercel.app/api/datos');
+      //const response = await fetch('https://alistamiento-backend.vercel.app/api/datos');
+      const response = await fetch('http://localhost:3001/api/datos');
+
+      
       const data = await response.json();
       setDatos(data); // Guardar datos en el estado global
       console.log('Datos obtenidos:', data);
     } catch (error) {
       console.error('Error al obtener los datos:', error);
     }
+    
   };
 
   // Llamar a la función fetchDatos al cargar el componente
   useEffect(() => {
     fetchDatos();
   }, []);
+  
 
-  const HandleEnviar = async (e) => {
-    e.preventDefault(); // Evitar la recarga de la página
+  const HandleEnviar = async () => {
 
     try {
       const response = await fetch('https://alistamiento-backend.vercel.app/api/agregar', {
@@ -67,7 +73,11 @@ export const MyProvider = ({ children }) => {
       console.error('Error al ingresar los datos:', error);
       setError('Error al enviar datos al servidor');
     }
+    
   };
+   
+  
+  
 
   return (
     <MyContext.Provider

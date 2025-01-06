@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router-dom";
+import { data, Route, Routes } from "react-router-dom";
 import "./App.css";
 import Ingreso from "./components/ingreso-guias/Ingreso";
 import Navbar from "./components/navbar/Navbar";
@@ -12,9 +12,11 @@ import { Login } from "../src/components/login/Login";
 
 function App() {
   return (
+    
     <ContextLogin>
+      
       <MyProvider>
-      <Context_Hecho>
+      <Context_Hecho >
         <Navbar />
         <Routes>
           {/* Ruta principal */}
