@@ -8,7 +8,7 @@ import { ContextLogin } from "./context/ContextLogin";
 import { MyProvider } from "./context/Context";
 import { ProtectedRoute } from "./context/ProtectedRoute";
 import { Context_Hecho } from "./context/Context_Hecho";
-import { Login } from "./components/login/login";
+import { Login } from "../src/components/login/Login";
 
 function App() {
   return (
@@ -18,7 +18,7 @@ function App() {
         <Navbar />
         <Routes>
           {/* Ruta principal */}
-          <Route path="/" element={<Login />} />
+          <Route path="/" element={<Login/>} />
 
           {/* Rutas protegidas */}
           <Route
