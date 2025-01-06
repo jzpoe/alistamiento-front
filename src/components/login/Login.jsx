@@ -25,13 +25,16 @@ const handleSubmit = async (e) => {
     const response = await fetch('http://localhost:3001/api/login', {
       method: 'POST',
       headers: {
+
         'Content-Type': 'application/json'
       },
+      credentials: 'include', // Incluye cookies en las solicitudes
       body: JSON.stringify({usuario, password})
     });
 
     const data = await response.json();
     if(response.ok){
+
       login(); // Autenticar al usuario
       navigate('/ingreso'); // Redirigir a la página principal
       console.log('Login exitoso', data);

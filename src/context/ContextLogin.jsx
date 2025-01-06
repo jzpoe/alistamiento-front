@@ -19,3 +19,4 @@ export const ContextLogin = ({ children }) => {
 
 // Hook personalizado para usar el contexto
 export const useAuth = () => useContext(MyContextLogin);
+    

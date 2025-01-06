@@ -20,6 +20,12 @@
   text-align: left;
 }
 
+
+.card-hecha {
+  background-color: #d4edda; /* Verde claro */
+  border: 1px solid #c3e6cb;
+}
+
 /* Contenido de la card */
 .card-content {
   width: 100%;
