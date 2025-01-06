@@ -33,7 +33,8 @@ export const MyProvider = ({ children }) => {
     e.preventDefault(); // Evitar la recarga de la página
 
     try {
-      const response = await fetch('http://localhost:3001/api/agregar', {
+      const response = await fetch('https://alistamiento-front.vercel.app/api/agregar', {
+      //const response = await fetch('http://localhost:3001/api/agregar', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
