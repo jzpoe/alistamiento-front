@@ -22,7 +22,7 @@ const handleSubmit = async (e) => {
   }
 
   try {
-    const response = await fetch('https://alistamiento-front.vercel.app/api/login', {
+    const response = await fetch('https://alistamiento-backend.vercel.app/api/login', {
     //const response = await fetch('http://localhost:3001/api/login', {
       method: 'POST',
       headers: {

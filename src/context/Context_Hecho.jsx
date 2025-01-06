@@ -9,7 +9,7 @@ export const Context_Hecho = ({ children }) => {
         try {
             setHecho((prev) => ({ ...prev, [id]: true }));
 
-            const response = await fetch(`https://alistamiento-front.vercel.app/api/hecho/${id}`, {
+            const response = await fetch(`https://alistamiento-backend.vercel.app/api/hecho/${id}`, {
             //const response = await fetch(`http://localhost:3001/api/hecho/${id}`, {
                 method: 'PATCH',
                 headers: {

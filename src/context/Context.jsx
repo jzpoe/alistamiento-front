@@ -15,7 +15,7 @@ export const MyProvider = ({ children }) => {
   // Función para obtener datos desde el backend
   const fetchDatos = async () => {
     try {
-      const response = await fetch('http://localhost:3001/api/datos');
+      const response = await fetch('https://alistamiento-backend.vercel.app/api/datos');
       const data = await response.json();
       setDatos(data); // Guardar datos en el estado global
       console.log('Datos obtenidos:', data);
@@ -33,7 +33,7 @@ export const MyProvider = ({ children }) => {
     e.preventDefault(); // Evitar la recarga de la página
 
     try {
-      const response = await fetch('https://alistamiento-front.vercel.app/api/agregar', {
+      const response = await fetch('https://alistamiento-backend.vercel.app/api/agregar', {
       //const response = await fetch('http://localhost:3001/api/agregar', {
         method: 'POST',
         headers: {
