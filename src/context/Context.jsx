@@ -17,8 +17,8 @@ export const MyProvider = ({ children }) => {
   const fetchDatos = async () => {
     
     try {
-      //const response = await fetch('https://alistamiento-backend.vercel.app/api/datos');
-      const response = await fetch('http://localhost:3001/api/datos');
+      const response = await fetch('https://alistamiento-backend.vercel.app/api/datos');
+      //const response = await fetch('http://localhost:3001/api/datos');
 
       
       const data = await response.json();
