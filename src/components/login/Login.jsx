@@ -4,7 +4,7 @@ import  './login.css'
 import { useAuth } from '../../context/ContextLogin';
 
 
-export const Login = () => {
+const Login = () => {
   const [usuario, setUsuario] = useState('')
   const [password, setPassword] = useState('')
   const [error, setError] = useState(null);
@@ -80,3 +80,4 @@ const handleSubmit = async (e) => {
   )
 }
 
+export default Login;
